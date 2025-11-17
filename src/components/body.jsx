@@ -5,7 +5,7 @@ import Projects from "./projects";
 
 
 // 💡 استخدم رقم هاتفك الدولي هنا (بدون + أو مسافات)
-const WHATSAPP_NUMBER = '218943284929'; // مثال: 21892XXXXXXX لرقم في ليبيا
+const WHATSAPP_NUMBER = '218943284929'; 
 
 const lalezar = Lalezar({
     subsets:['arabic'],

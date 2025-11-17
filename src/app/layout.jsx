@@ -1,10 +1,12 @@
-import { Tajwal , Cairo, Tajawal } from "next/font/google";
+import { Cairo, Tajawa , Poppins } from "next/font/google";
 import "./globals.css";
+import Classichead from "@/components/Classichead";
+import WorkBody from "@/components/WorkBody";
 
 
-const tajawal = Tajawal({
-  subsets:['arabic'],
-  weight:['400' , '800']
+const pop = Poppins({
+    subsets:['latin'],
+    weight:['400' , '600' , '800']
 })
 
 const cairo = Cairo({
@@ -15,7 +17,7 @@ const cairo = Cairo({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${cairo.className} bg-[#ffffff]`}>
+      <body className={`${pop.className} bg-[#fcf6f4]`}>
         {children}
       </body>
     </html>
