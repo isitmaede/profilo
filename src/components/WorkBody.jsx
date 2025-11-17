@@ -42,7 +42,7 @@ export default function WorkBody() {
                 <FaArrowAltCircleUp className="mt-5" />
                </div>
                
-               <Link href={'/conatct'} className="mt-5">Get In Touch</Link>
+               <Link href={'/contact'} className="mt-5">Get In Touch</Link>
                
             </div>
     </div>
