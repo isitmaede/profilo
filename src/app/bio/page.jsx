@@ -76,9 +76,9 @@ export default function Page() {
 
         {/* الروابط قبل About Me */}
         <div className="flex gap-10 text-lg mb-12">
-          <Link href={'/'} className="hover:border-b border-b cursor-pointer">Mail</Link>
-          <Link href={'/'} className="hover:border-b border-b cursor-pointer">Github</Link>
-          <Link href={'/'} className="hover:border-b border-b cursor-pointer">LinkedIn</Link>
+          <Link href={'mailto:mohammedahmadyounes@gmail.com'} className="hover:border-b border-b cursor-pointer">Mail</Link>
+          <Link href={'https://github.com/isitmaede'} className="hover:border-b border-b cursor-pointer">Github</Link>
+          <Link href={'https://www.linkedin.com/in/mohammedyounusdev?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app'} className="hover:border-b border-b cursor-pointer">LinkedIn</Link>
         </div>
 
         {/* About Me */}
