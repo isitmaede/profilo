@@ -5,6 +5,7 @@ import {PT_Serif , Old_Standard_TT} from 'next/font/google';
 import { FaArrowAltCircleUp } from 'react-icons/fa';
 import Workprojects  from './Workprojects';
 import Link from 'next/link';
+import TopProjects from './TopProjects';
 const pt = Old_Standard_TT({
     subsets:['latin'],
     weight:['700'],
@@ -28,6 +29,7 @@ export default function WorkBody() {
         <div className='flex flex-row gap-1 items-center  mt-5'>
             <p className='mt-2'>* Founder of <span  className='font-extrabold hover:text-green-600 duration-200'><Link href={'https://aleeflibya.vercel.app/'}>Aleef</Link></span></p> <FaPaw className='mt-2' />
         </div>
+        <TopProjects />
         <div className='flex flex-col '>
             <p className='mt-18 text-4xl text-left'>some <span className=''>of my work</span></p>
             <div className='h-px bg-gray-950 w-[100px] mt-1'></div>
