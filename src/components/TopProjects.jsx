@@ -4,13 +4,24 @@ import { Globe, Smartphone } from "lucide-react";
 import Image from "next/image";
 import Vecura from "@/assets/vecura.png";
 import Aleef from "@/assets/uptodown.png";
-
+import Travel from '@/assets/travelhub.png'
 const Tops = [
   {
     id: 1,
+    name: "TravelHub-Travel-Agency-Management-SaaS",
+    des: "TravelHub is a streamlined MVP (Minimum Viable Product) designed to digitize local travel agencies. It transforms traditional, paper-based operations into a modern, data-driven digital experience. Built with a focus on high performance, SEO, and seamless user experience for both agency owners and travelers.",
+    tech: ["React", "NextJs" , "TailwindCss" , "typescript" , "Node.js", "express", "MongoDB"],
+    icon: Globe,
+    accentColor: "border-amber-100",
+    iconColor: "text-blue-400",
+    proimg: Travel,
+    Linko: "https://travelhubly.vercel.app/",
+  },
+  {
+    id: 2,
     name: "Vecura — Advanced OSINT Intelligence Suite",
     des: "A comprehensive suite for Open-Source Intelligence (OSINT), engineered to streamline data gathering, analysis, and investigative workflows.",
-    tech: ["React", "Node.js", "MongoDB"],
+    tech: ["nextjs", "Node.js", "MongoDB"],
     icon: Globe,
     accentColor: "border-amber-100",
     iconColor: "text-blue-400",
@@ -18,7 +29,7 @@ const Tops = [
     Linko: "https://vecura.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     name: "Aleef — Community Pet Adoption App",
     des: "A mobile platform designed to connect local adopters with stray animals, offering a structured, humane, and community‑driven adoption experience.",
     tech: ["React Native", "Expo", "PostgreSQL"],
