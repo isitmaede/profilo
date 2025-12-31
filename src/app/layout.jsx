@@ -17,7 +17,7 @@ const cairo = Cairo({
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${pop.className} bg-[#fcf6f4]`}>
+      <body className={``}>
         {children}
       </body>
     </html>
