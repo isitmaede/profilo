@@ -22,6 +22,7 @@ import Quiz from "@/assets/quiz.png";
 import AleefWeb from "@/assets/aleef.png";
 import Nota from "@/assets/mynota.png";
 import Gym from '@/assets/gym.png'
+import Velura from '@/assets/velura.jpg'
 // 1. Featured Projects (الكبرى)
 const featured = [
   {
@@ -55,10 +56,10 @@ const featured = [
 const projectsJson = [
   {
     id: 1,
-    pimage: Quiz,
-    name: "BestieQuizz",
-    pds: "Playful quiz for friends to test their bonds.",
-    plink: "https://bestiequizcheck.vercel.app/",
+    pimage: Velura,
+    name: "Velura",
+    pds: "A dual-sided scheduling platform for beauty centers, bridging client booking intent with a robust administrative control system.",
+    plink: "#",
   },
   {
     id: 2,
