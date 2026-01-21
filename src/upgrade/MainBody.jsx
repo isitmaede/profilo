@@ -12,18 +12,19 @@ import {
 } from "lucide-react";
 
 // --- Assets ---
-import Vecura from "@/assets/vecura.png";
+import Vecura from "@/assets/vecura_mockup.png";
 import AleefPro from "@/assets/aleefmockup.jpg";
-import Travel from "@/assets/travelhub.png";
-import Sabeel from "@/assets/sabeel.png";
+import Travel from "@/assets/travel_mockup.png";
+import Sabeel from "@/assets/sabeel_mockup.png";
 import Java from "@/assets/java.png";
 import Havana from "@/assets/havana.png";
 import Quiz from "@/assets/quiz.png";
 import AleefWeb from "@/assets/aleef.png";
-import Nota from "@/assets/mynota.png";
-import Gym from '@/assets/gym.png'
-import Velura from '@/assets/velura.jpg'
-// 1. Featured Projects (الكبرى)
+import Nota from "@/assets/mynota_mockup.png";
+import Gym from "@/assets/gym_mockup.png";
+import Velura from "@/assets/velura_mockup.png";
+import WePet from "@/assets/wepet.jpg";
+import Dinar from "@/assets/dinar_mockup.png";
 const featured = [
   {
     id: 1,
@@ -33,7 +34,7 @@ const featured = [
     img: Travel,
     link: "https://travelhubly.vercel.app/",
   },
-  
+
   {
     id: 2,
     name: "Vecura OSINT",
@@ -44,11 +45,18 @@ const featured = [
   },
   {
     id: 3,
-    name: "Aleef Mobile",
-    des: "Community pet adoption app.",
-    tech: ["React Native", "PostgreSQL"],
-    img: AleefPro,
-    link: "https://com-xeyappsss-aleef.ar.uptodown.com/android",
+    name: "WePet ( Coming Soon )",
+    des: "Social Community pet app.",
+    tech: [
+      "React Native",
+      "PostgreSQL",
+      "expo",
+      "fastify",
+      "node.js",
+      "Prisma",
+    ],
+    img: WePet,
+    link: "https://wepet.vercel.app/",
   },
 ];
 
@@ -56,41 +64,38 @@ const featured = [
 const projectsJson = [
   {
     id: 1,
-    pimage: Velura,
-    name: "Velura",
-    pds: "A dual-sided scheduling platform for beauty centers, bridging client booking intent with a robust administrative control system.",
-    plink: "#",
+    pimage: Dinar,
+    name: "Dinarista – Official Libyan FX rates API (Open Source)",
+    pds: "Explores data sourcing, API design, and market/official rate separation.",
+    plink: "https://dinarista.vercel.app/",
   },
+
   {
     id: 2,
     pimage: Gym,
     name: "ProGym Manager - SaaS Subscription Platform",
     pds: "manage your gym Subscription easily",
-    plink: "https://github.com/isitmaede/ProGym-Manager---SaaS-Subscription-Platform.git",
+    plink:
+      "https://github.com/isitmaede/ProGym-Manager---SaaS-Subscription-Platform.git",
   },
+
   {
     id: 3,
-    pimage: Havana,
-    name: "Havana Food",
-    pds: "Traditional restaurant site with modern clarity.",
-    plink: "https://havanafood.vercel.app/",
+    pimage: Velura,
+    name: "Velura",
+    pds: "A dual-sided scheduling platform for beauty centers, bridging client booking intent with a robust administrative control system.",
+    plink: "#",
   },
+
   {
     id: 4,
-    pimage: AleefWeb,
-    name: "Aleef Web",
-    pds: "Libyan platform for animal welfare.",
-    plink: "https://aleeflibya.vercel.app/",
-  },
-  {
-    id: 5,
     pimage: Nota,
     name: "MyNota",
     pds: "Local notes tool with AI summarization.",
     plink: "https://mynota.vercel.app/",
   },
   {
-    id: 6,
+    id: 5,
     pimage: Sabeel,
     name: "AlSabeel",
     pds: "Timeless layout for travel agencies.",
@@ -136,10 +141,10 @@ export default function PortfolioBody() {
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
             <p className="text-lg md:text-xl font-light text-zinc-400 max-w-md leading-tight">
-              A Creative Developer focusing on{" "}
-              <span className="text-white italic">Editorial Design</span> and
-              robust Full-stack architecture.
+              A product-focused developer building thoughtful digital systems —
+              spanning frontend, backend, and product design.
             </p>
+
             <div className="flex gap-6 text-[10px] uppercase tracking-widest font-bold">
               <button
                 onClick={() => scrollTo("work")}
