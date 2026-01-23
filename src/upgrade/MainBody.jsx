@@ -1,307 +1,383 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import {
-  ArrowUpRight,
-  Github,
-  Linkedin,
-  MessageCircle,
-  Globe,
-  Smartphone,
-} from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, MessageCircle } from "lucide-react";
 
 // --- Assets ---
 import Vecura from "@/assets/vecura_mockup.png";
-import AleefPro from "@/assets/aleefmockup.jpg";
 import Travel from "@/assets/travel_mockup.png";
 import Sabeel from "@/assets/sabeel_mockup.png";
-import Java from "@/assets/java.png";
-import Havana from "@/assets/havana.png";
-import Quiz from "@/assets/quiz.png";
-import AleefWeb from "@/assets/aleef.png";
 import Nota from "@/assets/mynota_mockup.png";
 import Gym from "@/assets/gym_mockup.png";
 import Velura from "@/assets/velura_mockup.png";
 import WePet from "@/assets/wepet.jpg";
 import Dinar from "@/assets/dinar_mockup.png";
+import Qatra from "@/assets/qatra_mockup.png";
+
+// --- Data ---
 const featured = [
   {
-    id: 1,
+    id: "01",
     name: "TravelHub SaaS",
-    des: "Next-gen travel agency management.",
-    tech: ["Next.js", "MongoDB"],
+    des: "A multi-tenant travel agency system that standardizes workflows, publishes structured trip catalogs, and tracks performance with clean, real-time analytics.",
+    tech: ["Next.js", "TypeScript" ,  "MongoDB", "SaaS" , ],
     img: Travel,
     link: "https://travelhubly.vercel.app/",
   },
-
   {
-    id: 2,
+    id: "02",
+    name: "Drop of Hope",
+    des: "A location-first blood donation coordinator for Libya — built for speed, clarity, and secure sessions. Turns urgent requests into fast matching and action.",
+    tech: ["React Native", "Expo" , "Supabase", "RLS"],
+    img: Qatra,
+    link: "https://github.com/isitmaede/qatra",
+  },
+  {
+    id: "03",
     name: "Vecura OSINT",
-    des: "Intelligence gathering suite.",
-    tech: ["TypeScript", "Node.js"],
+    des: "An OSINT toolkit for structured data collection and footprint analysis — focused on automation, performance, and practical outputs.",
+    tech: ["Next.Js","TypeScript", "Node.js"],
     img: Vecura,
     link: "https://vecura.vercel.app/",
   },
   {
-    id: 3,
-    name: "WePet ( Coming Soon )",
-    des: "Social Community pet app.",
-    tech: [
-      "React Native",
-      "PostgreSQL",
-      "expo",
-      "fastify",
-      "node.js",
-      "Prisma",
-    ],
+    id: "04",
+    name: "WePet Mobile",
+    des: "A practical pet welfare platform for Libya — adoption tracking, lost/found reports, and lightweight social profiles with safe handling of user data.",
+    tech: ["React Native", "Expo" , "Fastify", "PostgreSQL" ,"Prisma"],
     img: WePet,
     link: "https://wepet.vercel.app/",
   },
 ];
 
-// 2. Side Projects (التي أرسلتها الآن)
 const projectsJson = [
   {
     id: 1,
     pimage: Dinar,
-    name: "Dinarista – Official Libyan FX rates API (Open Source)",
-    pds: "Explores data sourcing, API design, and market/official rate separation.",
+    name: "Dinarista FX API",
+    pds: "A clean FX surface with official/market separation, caching, and developer-first endpoints.",
     plink: "https://dinarista.vercel.app/",
   },
-
   {
     id: 2,
     pimage: Gym,
-    name: "ProGym Manager - SaaS Subscription Platform",
-    pds: "manage your gym Subscription easily",
-    plink:
-      "https://github.com/isitmaede/ProGym-Manager---SaaS-Subscription-Platform.git",
+    name: "ProGym Manager",
+    pds: "Subscription management for gyms with admin controls and predictable billing logic.",
+    plink: "https://github.com/isitmaede/ProGym-Manager---SaaS-Subscription-Platform.git",
   },
-
   {
     id: 3,
     pimage: Velura,
     name: "Velura",
-    pds: "A dual-sided scheduling platform for beauty centers, bridging client booking intent with a robust administrative control system.",
+    pds: "Scheduling built around intent: clients book fast, centers manage operations clearly.",
     plink: "#",
   },
-
   {
     id: 4,
     pimage: Nota,
     name: "MyNota",
-    pds: "Local notes tool with AI summarization.",
+    pds: "A lightweight notes system with AI summarization for fast knowledge capture.",
     plink: "https://mynota.vercel.app/",
   },
   {
     id: 5,
     pimage: Sabeel,
     name: "AlSabeel",
-    pds: "Timeless layout for travel agencies.",
+    pds: "A timeless, high-performance marketing layout for travel agencies.",
     plink: "https://alsabeeltravel.vercel.app/",
   },
 ];
 
 const experiences = [
   {
-    period: "2023 - Present",
+    period: "2023 — Present",
     role: "Full-Stack Developer (Freelance)",
     company: "Remote / Benghazi",
     description:
-      "Crafting bespoke digital solutions and high-performance APIs.",
+      "Building product-ready web apps and APIs — focused on reliability, speed, and clean UX.",
   },
   {
-    period: "2021 - 2023",
+    period: "2021 — 2023",
     role: "Back-End Developer",
     company: "Various Startups",
     description:
-      "Architecting scalable server-side systems and database management.",
+      "Designing server-side systems, databases, and deployment flows with scalable patterns.",
   },
 ];
 
+function Pill({ children }) {
+  return (
+    <span className="inline-flex items-center rounded-full border border-zinc-800 px-3 py-1 text-[11px] font-semibold tracking-wide text-zinc-400">
+      {children}
+    </span>
+  );
+}
+
 export default function PortfolioBody() {
   const scrollTo = (id) =>
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   return (
-    <div className="bg-black text-white selection:bg-white selection:text-black font-sans">
-      {/* --- HERO SECTION --- */}
-      <section className="min-h-screen flex flex-col justify-center px-6 md:px-16 border-b border-zinc-900">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1 }}
-        >
-          <span className="text-[10px] uppercase tracking-[0.5em] text-zinc-500 mb-8 block">
-            Based in Benghazi, Libya
-          </span>
-          <h1 className="text-[15vw] md:text-[12vw] font-black leading-[0.8] tracking-tighter uppercase mb-12">
-            Mohammed <br /> <span className="text-zinc-800">Younes.</span>
-          </h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end">
-            <p className="text-lg md:text-xl font-light text-zinc-400 max-w-md leading-tight">
-              A product-focused developer building thoughtful digital systems —
-              spanning frontend, backend, and product design.
-            </p>
+    <div className="bg-black text-zinc-100 font-sans antialiased">
+      {/* TOP FRAME */}
+      <div className="mx-auto max-w-6xl px-6 md:px-10">
+        {/* HEADER */}
+        <header className="pt-14 pb-10">
+          <div className="flex items-center justify-between gap-6">
+            <div className="text-[11px] font-semibold tracking-[0.3em] text-zinc-500 uppercase">
+              Benghazi, Libya · 2026
+            </div>
 
-            <div className="flex gap-6 text-[10px] uppercase tracking-widest font-bold">
-              <button
-                onClick={() => scrollTo("work")}
-                className="hover:line-through"
-              >
-                Selected Work
-              </button>
-              <button
-                onClick={() => scrollTo("archive")}
-                className="hover:line-through"
-              >
-                Project Archive
-              </button>
-              <button
-                onClick={() => scrollTo("contact")}
-                className="hover:line-through"
-              >
-                Contact
-              </button>
+            <nav className="flex items-center gap-8 text-[11px] font-semibold tracking-[0.22em] text-zinc-500 uppercase">
+              {["work", "archive", "contact"].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollTo(item)}
+                  className="hover:text-zinc-100 transition-colors"
+                >
+                  {item}
+                </button>
+              ))}
+            </nav>
+          </div>
+        </header>
+
+        {/* HERO */}
+        <section className="pt-10 pb-20 border-b border-zinc-900">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
+            <div className="md:col-span-8">
+              <h1 className="text-[12.5vw] md:text-[72px] leading-[0.95] tracking-[-0.04em] font-black uppercase">
+                Mohammed Younes
+              </h1>
+
+              <p className="mt-8 max-w-2xl text-base md:text-lg leading-relaxed text-zinc-400">
+                Product-focused developer. I build systems that feel simple on the surface,
+                but are engineered to scale underneath — web, mobile, APIs, and product design.
+              </p>
+
+              <div className="mt-10 flex flex-wrap gap-2">
+                <Pill>Full-Stack</Pill>
+                <Pill>Next.js</Pill>
+                <Pill>Node.js</Pill>
+                <Pill>React Native</Pill>
+                <Pill>Systems & UX</Pill>
+              </div>
+            </div>
+
+            <div className="md:col-span-4">
+              <div className="rounded-2xl border border-zinc-900 bg-zinc-950 p-6">
+                <div className="text-[11px] font-semibold tracking-[0.28em] text-zinc-500 uppercase">
+                  Current Focus
+                </div>
+                <div className="mt-4 space-y-3 text-sm text-zinc-400 leading-relaxed">
+                  <p>• Building SaaS-style dashboards and analytics that read like a story.</p>
+                  <p>• Shipping MVPs fast without turning code into a landfill.</p>
+                  <p>• Practical security: sessions, RLS, validation, rate limits.</p>
+                </div>
+              </div>
             </div>
           </div>
-        </motion.div>
+        </section>
+
+        {/* FEATURED */}
+        <section id="work" className="py-20">
+          <div className="flex items-end justify-between gap-6 mb-12">
+            <h2 className="text-[11px] font-semibold tracking-[0.3em] text-zinc-500 uppercase">
+              Selected Work
+            </h2>
+            <div className="text-[11px] font-semibold tracking-[0.22em] text-zinc-600 uppercase">
+              Systems · MVPs · Production APIs
+            </div>
+          </div>
+
+          <div className="space-y-16">
+            {featured.map((p, index) => {
+              const flip = index % 2 === 1;
+              return (
+                <article
+                  key={p.id}
+                  className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start"
+                >
+                  {/* IMAGE */}
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`md:col-span-7 block rounded-2xl overflow-hidden border border-zinc-900 bg-zinc-950 ${
+                      flip ? "md:order-2" : "md:order-1"
+                    }`}
+                  >
+                    <div className="relative aspect-[16/10] md:aspect-[4/3]">
+                      <Image
+                        src={p.img}
+                        alt={p.name}
+                        fill
+                        priority={index === 0}
+                        sizes="(max-width: 768px) 100vw, 60vw"
+                        className="object-cover opacity-90"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                    </div>
+                  </a>
+
+                  {/* TEXT */}
+                  <div className={`md:col-span-5 ${flip ? "md:order-1" : "md:order-2"}`}>
+                    <div className="text-[11px] font-semibold tracking-[0.3em] text-zinc-500 uppercase">
+                      // {p.id}
+                    </div>
+
+                    <h3 className="mt-4 text-3xl md:text-4xl font-black tracking-tight uppercase">
+                      {p.name}
+                    </h3>
+
+                    <p className="mt-5 text-zinc-400 leading-relaxed">
+                      {p.des}
+                    </p>
+
+                    <div className="mt-7 flex flex-wrap gap-2">
+                      {p.tech.map((t) => (
+                        <Pill key={t}>{t}</Pill>
+                      ))}
+                    </div>
+
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-8 inline-flex items-center gap-3 text-[12px] font-semibold tracking-[0.22em] uppercase text-zinc-200 hover:text-white transition-colors"
+                    >
+                      View Project
+                      <ArrowUpRight size={18} className="opacity-80" />
+                    </a>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      </div>
+
+      {/* ARCHIVE STRIP */}
+      <section id="archive" className="border-y border-zinc-900 bg-[#050505]">
+        <div className="mx-auto max-w-6xl px-6 md:px-10 py-20">
+          <h2 className="text-[11px] font-semibold tracking-[0.3em] text-zinc-500 uppercase mb-12">
+            Project Archive
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {projectsJson.map((p) => (
+              <a
+                key={p.id}
+                href={p.plink}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-2xl border border-zinc-900 bg-zinc-950 overflow-hidden"
+              >
+                <div className="relative aspect-[16/11]">
+                  <Image
+                    src={p.pimage}
+                    alt={p.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover opacity-85"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+                </div>
+
+                <div className="p-6">
+                  <div className="text-xl font-black tracking-tight uppercase">
+                    {p.name}
+                  </div>
+                  <p className="mt-3 text-sm text-zinc-400 leading-relaxed">
+                    {p.pds}
+                  </p>
+                  <div className="mt-6 inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.22em] uppercase text-zinc-300">
+                    Inspect <ArrowUpRight size={16} className="opacity-75" />
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
       </section>
 
-      {/* --- FEATURED WORK (Large) --- */}
-      <section id="work" className="py-32 px-6 md:px-16">
-        <h2 className="text-xs uppercase tracking-[0.4em] text-zinc-600 mb-20">
-          // Featured Engineering
-        </h2>
-        <div className="space-y-40">
-          {featured.map((p) => (
-            <div
-              key={p.id}
-              className="group grid grid-cols-1 md:grid-cols-12 gap-12 items-center"
-            >
-              <div className="md:col-span-7 overflow-hidden bg-zinc-900 aspect-video relative grayscale group-hover:grayscale-0 transition-all duration-700">
-                <Image
-                  src={p.img}
-                  alt={p.name}
-                  fill
-                  className="object-cover opacity-60 group-hover:scale-105 transition-transform duration-1000"
-                />
+      {/* FOOTER */}
+      <footer id="contact" className="bg-white text-black">
+        <div className="mx-auto max-w-6xl px-6 md:px-10 py-20">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
+            <div className="md:col-span-7">
+              <h2 className="text-[11px] font-semibold tracking-[0.3em] text-zinc-500 uppercase mb-10">
+                Experience
+              </h2>
+
+              <div className="space-y-10">
+                {experiences.map((ex, i) => (
+                  <div key={i} className="border-l-4 border-zinc-200 pl-6">
+                    <div className="text-[11px] font-semibold tracking-[0.24em] text-zinc-500 uppercase">
+                      {ex.period}
+                    </div>
+                    <div className="mt-2 text-2xl font-black tracking-tight uppercase">
+                      {ex.role}
+                    </div>
+                    <div className="mt-2 text-sm font-semibold text-zinc-500">
+                      {ex.company}
+                    </div>
+                    <p className="mt-3 text-sm text-zinc-600 leading-relaxed">
+                      {ex.description}
+                    </p>
+                  </div>
+                ))}
               </div>
-              <div className="md:col-span-5">
-                <h3 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 uppercase italic group-hover:not-italic transition-all">
-                  {p.name}
-                </h3>
-                <p className="text-zinc-400 font-light mb-8 text-lg">{p.des}</p>
+            </div>
+
+            <div className="md:col-span-5">
+              <h2 className="text-5xl md:text-6xl font-black tracking-tight uppercase leading-[0.95]">
+                Let’s
+                <br />
+                Build.
+              </h2>
+
+              <p className="mt-6 text-sm text-zinc-600 leading-relaxed max-w-md">
+                I prefer clean systems, clear decisions, and shipping. If your project needs
+                structure before features — we’ll get along.
+              </p>
+
+              <div className="mt-10 flex items-center gap-10">
                 <a
-                  href={p.link}
+                  href="https://github.com/isitmaede"
                   target="_blank"
-                  className="inline-flex items-center gap-2 border-b border-zinc-700 pb-1 hover:border-white transition-colors uppercase text-xs tracking-widest"
+                  rel="noreferrer"
+                  aria-label="GitHub"
+                  className="opacity-80 hover:opacity-100 transition-opacity"
                 >
-                  View Project <ArrowUpRight size={14} />
+                  <Github size={28} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/mohammedyounusdev"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="LinkedIn"
+                  className="opacity-80 hover:opacity-100 transition-opacity"
+                >
+                  <Linkedin size={28} />
+                </a>
+                <a
+                  href="https://wa.me/218943284929"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="WhatsApp"
+                  className="opacity-80 hover:opacity-100 transition-opacity"
+                >
+                  <MessageCircle size={28} />
                 </a>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* --- SIDE PROJECTS (Grid Archive) --- */}
-      <section
-        id="archive"
-        className="py-32 bg-[#080808] px-6 md:px-16 border-y border-zinc-900"
-      >
-        <h2 className="text-xs uppercase tracking-[0.4em] text-zinc-600 mb-16">
-          // Project Archive
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-24">
-          {projectsJson.map((p) => (
-            <motion.div
-              key={p.id}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="group"
-            >
-              <div className="relative aspect-[4/5] mb-6 bg-zinc-900 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
-                <Image
-                  src={p.pimage}
-                  alt={p.name}
-                  fill
-                  className="object-cover opacity-50 group-hover:opacity-100 transition-opacity"
-                />
-              </div>
-              <h4 className="text-2xl font-bold uppercase tracking-tighter mb-2">
-                {p.name}
-              </h4>
-              <p className="text-zinc-500 text-sm font-light mb-4 leading-relaxed line-clamp-2">
-                {p.pds}
-              </p>
-              <a
-                href={p.plink}
-                target="_blank"
-                className="text-[10px] uppercase tracking-widest font-bold hover:text-white text-zinc-600 transition-colors"
-              >
-                Launch Project
-              </a>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* --- EXPERIENCE & CONTACT --- */}
-      <footer
-        id="contact"
-        className="pt-32 pb-16 px-6 md:px-16 bg-white text-black"
-      >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 mb-40">
-          <div>
-            <h2 className="text-xs uppercase tracking-[0.4em] font-bold mb-10 text-zinc-400">
-              Experience
-            </h2>
-            <div className="space-y-12">
-              {experiences.map((ex, i) => (
-                <div key={i} className="border-l border-zinc-200 pl-6">
-                  <span className="text-[10px] font-mono text-zinc-400">
-                    {ex.period}
-                  </span>
-                  <h3 className="text-xl font-black uppercase tracking-tight">
-                    {ex.role}
-                  </h3>
-                  <p className="text-sm text-zinc-600 mt-2">{ex.description}</p>
-                </div>
-              ))}
-            </div>
           </div>
-          <div className="flex flex-col justify-end">
-            <h2 className="text-[8vw] font-black leading-none uppercase tracking-tighter italic">
-              Get In <br /> Touch.
-            </h2>
-            <div className="flex gap-8 mt-12">
-              <a
-                href="https://github.com/isitmaede"
-                className="hover:scale-110 transition-transform"
-              >
-                <Github />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/mohammedyounusdev"
-                className="hover:scale-110 transition-transform"
-              >
-                <Linkedin />
-              </a>
-              <a
-                href="https://wa.me/218943284929"
-                className="hover:scale-110 transition-transform"
-              >
-                <MessageCircle />
-              </a>
-            </div>
+
+          <div className="mt-16 pt-10 border-t border-zinc-200 flex items-center justify-between text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-500">
+            <span>© 2026 M. Younes</span>
+            <span className="text-black/70">32.11° N, 20.06° E</span>
           </div>
-        </div>
-        <div className="flex justify-between items-center border-t border-zinc-100 pt-8 text-[10px] uppercase tracking-widest font-medium text-zinc-400">
-          <span>© 2025 M.YOUNES</span>
-          <span>Benghazi, Libya</span>
         </div>
       </footer>
     </div>
