@@ -13,11 +13,20 @@ import Velura from "@/assets/velura_mockup.png";
 import WePet from "@/assets/wepet.jpg";
 import Dinar from "@/assets/dinar_mockup.png";
 import Qatra from "@/assets/qatra_mockup.png";
+import Libo from "@/assets/libostats.png"
 
 // --- Data ---
 const featured = [
   {
     id: "01",
+    name: "LiboStats Analytics",
+    des: "A data-intensive market analysis platform that processed 1,780+ live job listings in Libya. It features real-time salary benchmarking, geographic demand heatmaps, and automated data ingestion from unstructured sources into a structured PostgreSQL database.",
+    tech: ["Next.js", "Prisma", "PostgreSQL", "Neon DB", "Recharts", "Data Mining"],
+    img: Libo,
+    link: "https://libostats.vercel.app/", // استبدله برابط المشروع الحقيقي
+  },
+  {
+    id: "02",
     name: "TravelHub SaaS",
     des: "A multi-tenant travel agency system that standardizes workflows, publishes structured trip catalogs, and tracks performance with clean, real-time analytics.",
     tech: ["Next.js", "TypeScript" ,  "MongoDB", "SaaS" , ],
@@ -25,7 +34,7 @@ const featured = [
     link: "https://travelhubly.vercel.app/",
   },
   {
-    id: "02",
+    id: "03",
     name: "Drop of Hope",
     des: "A location-first blood donation coordinator for Libya — built for speed, clarity, and secure sessions. Turns urgent requests into fast matching and action.",
     tech: ["React Native", "Expo" , "Supabase", "RLS"],
@@ -33,7 +42,7 @@ const featured = [
     link: "https://github.com/isitmaede/qatra",
   },
   {
-    id: "03",
+    id: "04",
     name: "Vecura OSINT",
     des: "An OSINT toolkit for structured data collection and footprint analysis — focused on automation, performance, and practical outputs.",
     tech: ["Next.Js","TypeScript", "Node.js"],
@@ -41,7 +50,7 @@ const featured = [
     link: "https://vecura.vercel.app/",
   },
   {
-    id: "04",
+    id: "05",
     name: "WePet Mobile",
     des: "A practical pet welfare platform for Libya — adoption tracking, lost/found reports, and lightweight social profiles with safe handling of user data.",
     tech: ["React Native", "Expo" , "Fastify", "PostgreSQL" ,"Prisma"],
