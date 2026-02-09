@@ -23,7 +23,7 @@ const featured = [
     des: "A data-intensive market analysis platform that processed 1,780+ live job listings in Libya. It features real-time salary benchmarking, geographic demand heatmaps, and automated data ingestion from unstructured sources into a structured PostgreSQL database.",
     tech: ["Next.js", "Prisma", "PostgreSQL", "Neon DB", "Recharts", "Data Mining"],
     img: Libo,
-    link: "https://libostats.vercel.app/", // استبدله برابط المشروع الحقيقي
+    link: "https://libostatistics.vercel.app/", // استبدله برابط المشروع الحقيقي
   },
   {
     id: "02",
