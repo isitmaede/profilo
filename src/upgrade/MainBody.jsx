@@ -13,47 +13,70 @@ import Velura from "@/assets/velura_mockup.png";
 import WePet from "@/assets/wepet.jpg";
 import Dinar from "@/assets/dinar_mockup.png";
 import Qatra from "@/assets/qatra_mockup.png";
-import Libo from "@/assets/libostats.png"
+import Libo from "@/assets/libostats.png";
+import Ordly from "@/assets/Ordly.png";
 
 // --- Data ---
 const featured = [
   {
     id: "01",
+    name: "Ordly SaaS Ecosystem",
+    des: "A high-performance digital menu and ordering engine specifically architected for the Libyan hospitality market. It streamlines the bridge between QR-based browsing and WhatsApp-driven order fulfillment, featuring a robust multi-tenant architecture, real-time analytics dashboard, and an optimized mobile-first UI built for high conversion rates in low-bandwidth environments.",
+    tech: [
+      "Next.js 15",
+      "Tailwind v4",
+      "Prisma",
+      "PostgreSQL",
+      "Framer Motion",
+      "SaaS Architecture",
+    ],
+    img: Ordly, // تأكد من استيراد الصورة المناسبة
+    link: "https://ordly.ly",
+  },
+  {
+    id: "02",
     name: "LiboStats Analytics",
     des: "A data-intensive market analysis platform that processed 1,780+ live job listings in Libya. It features real-time salary benchmarking, geographic demand heatmaps, and automated data ingestion from unstructured sources into a structured PostgreSQL database.",
-    tech: ["Next.js", "Prisma", "PostgreSQL", "Neon DB", "Recharts", "Data Mining"],
+    tech: [
+      "Next.js",
+      "Prisma",
+      "PostgreSQL",
+      "Neon DB",
+      "Recharts",
+      "Data Mining",
+    ],
     img: Libo,
     link: "https://libostatistics.vercel.app/", // استبدله برابط المشروع الحقيقي
   },
   {
-    id: "02",
+    id: "03",
     name: "TravelHub SaaS",
     des: "A multi-tenant travel agency system that standardizes workflows, publishes structured trip catalogs, and tracks performance with clean, real-time analytics.",
-    tech: ["Next.js", "TypeScript" ,  "MongoDB", "SaaS" , ],
+    tech: ["Next.js", "TypeScript", "MongoDB", "SaaS"],
     img: Travel,
     link: "https://travelhubly.vercel.app/",
   },
   {
-    id: "03",
+    id: "04",
     name: "Drop of Hope",
     des: "A location-first blood donation coordinator for Libya — built for speed, clarity, and secure sessions. Turns urgent requests into fast matching and action.",
-    tech: ["React Native", "Expo" , "Supabase", "RLS"],
+    tech: ["React Native", "Expo", "Supabase", "RLS"],
     img: Qatra,
     link: "https://github.com/isitmaede/qatra",
   },
   {
-    id: "04",
+    id: "05",
     name: "Vecura OSINT",
     des: "An OSINT toolkit for structured data collection and footprint analysis — focused on automation, performance, and practical outputs.",
-    tech: ["Next.Js","TypeScript", "Node.js"],
+    tech: ["Next.Js", "TypeScript", "Node.js"],
     img: Vecura,
     link: "https://vecura.vercel.app/",
   },
   {
-    id: "05",
+    id: "06",
     name: "WePet Mobile",
     des: "A practical pet welfare platform for Libya — adoption tracking, lost/found reports, and lightweight social profiles with safe handling of user data.",
-    tech: ["React Native", "Expo" , "Fastify", "PostgreSQL" ,"Prisma"],
+    tech: ["React Native", "Expo", "Fastify", "PostgreSQL", "Prisma"],
     img: WePet,
     link: "https://wepet.vercel.app/",
   },
@@ -72,7 +95,8 @@ const projectsJson = [
     pimage: Gym,
     name: "ProGym Manager",
     pds: "Subscription management for gyms with admin controls and predictable billing logic.",
-    plink: "https://github.com/isitmaede/ProGym-Manager---SaaS-Subscription-Platform.git",
+    plink:
+      "https://github.com/isitmaede/ProGym-Manager---SaaS-Subscription-Platform.git",
   },
   {
     id: 3,
@@ -124,7 +148,9 @@ function Pill({ children }) {
 
 export default function PortfolioBody() {
   const scrollTo = (id) =>
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   return (
     <div className="bg-black text-zinc-100 font-sans antialiased">
@@ -156,12 +182,13 @@ export default function PortfolioBody() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
             <div className="md:col-span-8">
               <h1 className="text-[12.5vw] md:text-[72px] leading-[0.95] tracking-[-0.04em] font-black uppercase">
-                Mohammed Younes
+                Mohammed A. Younes
               </h1>
 
               <p className="mt-8 max-w-2xl text-base md:text-lg leading-relaxed text-zinc-400">
-                Product-focused developer. I build systems that feel simple on the surface,
-                but are engineered to scale underneath — web, mobile, APIs, and product design.
+                Product-focused developer. I build systems that feel simple on
+                the surface, but are engineered to scale underneath — web,
+                mobile, APIs, and product design.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-2">
@@ -173,18 +200,6 @@ export default function PortfolioBody() {
               </div>
             </div>
 
-            <div className="md:col-span-4">
-              <div className="rounded-2xl border border-zinc-900 bg-zinc-950 p-6">
-                <div className="text-[11px] font-semibold tracking-[0.28em] text-zinc-500 uppercase">
-                  Current Focus
-                </div>
-                <div className="mt-4 space-y-3 text-sm text-zinc-400 leading-relaxed">
-                  <p>• Building SaaS-style dashboards and analytics that read like a story.</p>
-                  <p>• Shipping MVPs fast without turning code into a landfill.</p>
-                  <p>• Practical security: sessions, RLS, validation, rate limits.</p>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -230,7 +245,9 @@ export default function PortfolioBody() {
                   </a>
 
                   {/* TEXT */}
-                  <div className={`md:col-span-5 ${flip ? "md:order-1" : "md:order-2"}`}>
+                  <div
+                    className={`md:col-span-5 ${flip ? "md:order-1" : "md:order-2"}`}
+                  >
                     <div className="text-[11px] font-semibold tracking-[0.3em] text-zinc-500 uppercase">
                       // {p.id}
                     </div>
@@ -347,8 +364,8 @@ export default function PortfolioBody() {
               </h2>
 
               <p className="mt-6 text-sm text-zinc-600 leading-relaxed max-w-md">
-                I prefer clean systems, clear decisions, and shipping. If your project needs
-                structure before features — we’ll get along.
+                I prefer clean systems, clear decisions, and shipping. If your
+                project needs structure before features — we’ll get along.
               </p>
 
               <div className="mt-10 flex items-center gap-10">
