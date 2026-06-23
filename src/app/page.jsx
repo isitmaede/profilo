@@ -1,18 +1,12 @@
-import Image from "next/image";
-import Header from "@/components/header";
-import Body from "@/components/body";
-import Footer from "@/components/footer";
-import Classichead from "@/components/Classichead";
-import WorkBody from "@/components/WorkBody";
-import MainHeader from "@/upgrade/MainHeader";
-import MainBody from "@/upgrade/MainBody";
-import MainFooter from "@/upgrade/MainFooter";
+import MainBodyUpdate from "../../update/MainBodyUpdate";
+import MainHeaderUpdate from "../../update/MainHeaderUpdate";
+import MainHeroUpdate from "../../update/MainHeroUpdate";
 export default function Home() {
   return (
     <div className="">
-      <MainHeader />
-      <MainBody />
-     
+     <MainHeaderUpdate />
+      <MainHeroUpdate />
+     <MainBodyUpdate />
     </div>
   );
 }
