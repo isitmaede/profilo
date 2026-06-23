@@ -13,7 +13,7 @@ import WePet from '@/assets/wepet.jpg'
 import Dinar from '@/assets/dinar_mockup.png'
 import Qatra from '@/assets/qatra_mockup.png'
 import Libo from '@/assets/libostats.png'
-import Ordly from '@/assets/Ordly.png'
+import Ordly from '@/assets/ordly.png'
 import plutu from '@/assets/pluto.png'
 const syne = Syne({ subsets: ['latin'], weight: ['400', '700', '800'] })
 const inter = Inter({ subsets: ['latin'], weight: ['300', '400', '500'] })
