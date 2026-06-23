@@ -69,9 +69,7 @@ export default function MainHeroUpdate() {
           <span className={`${inter.className} text-[10px] sm:text-[11px] text-[#3a3a36] uppercase tracking-[0.2em] sm:tracking-[0.25em]`}>
             Product Developer — Benghazi, Libya
           </span>
-          <span className={`${inter.className} text-[10px] sm:text-[11px] text-[#3a3a36] uppercase tracking-[0.2em] sm:tracking-[0.25em]`}>
-            32.11°N · 20.06°E
-          </span>
+          
         </div>
 
         <div className="flex flex-col gap-5 sm:gap-6 flex-1 justify-center py-8 sm:py-12">
